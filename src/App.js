@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route }
+    from 'react-router-dom';
+import Navbar from './components/Navbar';
+import React from 'react';
+import Home from './pages/index';
+import About from './pages/about';
+import Blogs from './pages/blogs';
+import Contact from './pages/contact';
+import FormDataComponent from './components/form-data-component';
+import TasGraph from './components/TASGraph';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/formData' element={<FormDataComponent />} />
+        <Route path='/tas_grph' element={<TasGraph />} />
+      </Routes>
+    </Router>
   );
 }
 
