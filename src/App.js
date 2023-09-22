@@ -7,8 +7,9 @@ import Home from './pages/index';
 import About from './pages/about';
 import Blogs from './pages/blogs';
 import Contact from './pages/contact';
-import FormDataComponent from './components/form-data-component';
-import TasGraph from './components/TASGraph';
+import FormDataComponent from './components/tas/form-data-component';
+import TasGraph from './components/tas/TASGraph';
+
 
 function App() {
   return (
