@@ -7,12 +7,10 @@ function TasGraph({chemData}) {
   
   function formatGraphData(data){
     let formatted = [];
-    data.forEach(formatted.push({x: parseInt(data[i].si), 
-      y: parseInt(data[i].kna)}))
-    // for (let i = 0; i < data.length; i++){
-      // formatted.push({x: parseInt(data[i].si), 
-      //   y: parseInt(data[i].kna)})
-    // }
+    for (let i = 0; i < data.length; i++){
+      formatted.push({x: parseInt(data[i].si), 
+        y: parseInt(data[i].kna)})
+    }
     return formatted;
   };
   const options = {

@@ -5,7 +5,7 @@ const Contact = () => {
         <div>
             <h1>
                 Mail us at wlbailey0@gmail.com.
-                view the source code on <a href='https://www.github.com/wlbailey0'>GITHUB</a>
+                view the source code on <a href='https://github.com/WLBailey0/geoChemReact'>GITHUB</a>
                 </h1>
         </div>
     );
