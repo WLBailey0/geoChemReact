@@ -4,7 +4,7 @@ import TasGraph from './TASGraph';
 
 let nextId = 0;
 
-export default function List() {
+export default function FormDataComponent() {
   const [si, setSi] = useState('');
   const [kna, setKna] = useState('');
   const [valueInput, setValueInput] = useState([]);

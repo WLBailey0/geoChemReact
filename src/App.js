@@ -8,7 +8,7 @@ import About from './pages/about';
 import Blogs from './pages/blogs';
 import Contact from './pages/contact';
 import FormDataComponent from './components/tas/form-data-component';
-import TasGraph from './components/tas/TASGraph';
+import Harker from './components/harker/harker-form-component';
 
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blogs' element={<Blogs />} />
-        <Route path='/formData' element={<FormDataComponent />} />
-        <Route path='/tas_grph' element={<TasGraph />} />
+        <Route path='/tas-plot' element={<FormDataComponent />} />
+        <Route path='/harker-plot' element={<Harker />} />
       </Routes>
     </Router>
   );
