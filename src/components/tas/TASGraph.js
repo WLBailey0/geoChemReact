@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import CanvasJSReact from '@canvasjs/react-charts';
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -8,8 +8,8 @@ function TasGraph({chemData}) {
   function formatGraphData(data){
     let formatted = [];
     for (let i = 0; i < data.length; i++){
-      formatted.push({x: parseInt(data[i].si), 
-        y: parseInt(data[i].kna)})
+      formatted.push({x: parseFloat(data[i].si), 
+        y: parseFloat(data[i].kna)})
     }
     return formatted;
   };

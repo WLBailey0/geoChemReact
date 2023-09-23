@@ -19,11 +19,11 @@ const Navbar = () => {
                     <NavLink to="/blogs" activeStyle>
                         Blogs
                     </NavLink>
-                    <NavLink to="/formData" activeStyle>
-                        Form
+                    <NavLink to="/tas-plot" activeStyle>
+                        TAS Plot
                     </NavLink>
-                    <NavLink to="/tas_graph" activeStyle>
-                        test graph
+                    <NavLink to="/harker-plot" activeStyle>
+                        Harker Plots
                     </NavLink>
                 </NavMenu>
             </Nav>
