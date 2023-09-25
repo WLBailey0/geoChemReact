@@ -41,11 +41,8 @@ export default function FormDataComponent() {
             </li>
         ))}
       </ul>
-      <button onClick={() => 
-        setActive(true)}
-        >Graph</button>
       <div>
-        {active && <TasGraph chemData={valueInput}/>}
+        { <TasGraph chemData={valueInput}/>}
       </div>
 
     </>

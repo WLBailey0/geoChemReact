@@ -1,6 +1,6 @@
 import {useState} from "react";
 import HarkerPlot from './HarkerGraph';
-
+import '../styles/harker-style.css'
 function Harker() {
     // const [si, setSi] = useState('');
     const [active, setActive] = useState(false);
@@ -15,17 +15,25 @@ function Harker() {
                 value={si}
                 onchange={e => setSi(e.target.value)}
                 /> */}
-                <button onClick={() => 
-                    setActive(true)}>
-                    Harker Diagrams
-                </button>
+
             </div>
-            <div>
-                {active && <HarkerPlot data={"FeO"} />}
-                {active && <HarkerPlot data={"Al2O3"} />}
-                {active && <HarkerPlot data={"MgO"} />}
-                {active && <HarkerPlot data={"K2O"} />}
-                {active && <HarkerPlot data={"TiO2"} />}
+            <div id="div">
+                <table id="harker-table">
+                    <tbody>
+                        <tr>
+                            <td className="graph">{ <HarkerPlot name={"Al2O3"} data={[]}/>}</td>
+                            <td className="graph">{ <HarkerPlot name={"FeO"} data={[1, 2]}/>}</td>
+                        </tr>
+                        <tr>
+                            <td className="graph">{ <HarkerPlot name={"TiO2"} data={[]}/>}</td>
+                            <td className="graph">{ <HarkerPlot name={"MgO"} data={[]}/>}</td>
+                        </tr>
+                        <tr>
+                            <td className="graph">{ <HarkerPlot name={"K2O"} data={[]}/>}</td>
+                            <td className="graph">{ <HarkerPlot name={"CaO"} data={[]} />}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </>
     )
