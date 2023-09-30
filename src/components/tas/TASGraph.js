@@ -1,15 +1,18 @@
 // import React from "react";
 import CanvasJSReact from '@canvasjs/react-charts';
+import { useState } from 'react';
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function TasGraph({chemData}) {
-  
+
+  const scatterData = formatGraphData(chemData);
+
   function formatGraphData(data){
     let formatted = [];
     for (let i = 0; i < data.length; i++){
       formatted.push({x: parseFloat(data[i].si), 
-        y: parseFloat(data[i].kna)})
+        y: parseFloat(data[i].kna), name: data[i].sample})
     }
     return formatted;
   };
@@ -29,8 +32,9 @@ function TasGraph({chemData}) {
     data: [    
       {
         type: "scatter",
+        toolTipContent: "{name}",
         dataPoints: 
-          formatGraphData(chemData)
+          scatterData
         
       },    
       {
@@ -246,8 +250,7 @@ function TasGraph({chemData}) {
   return (
     <div>
       <CanvasJSChart options = {options}
-      containerProps={{ width: '33%', height: '33%' }}
-        /* onRef = {ref => this.chart = ref} */
+      containerProps={{ width: '50%', height: '50%' }}
       />
       </div>
   );
