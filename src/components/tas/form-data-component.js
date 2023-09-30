@@ -5,16 +5,26 @@ import TasGraph from './TASGraph';
 let nextId = 0;
 
 export default function FormDataComponent() {
+  const [sample, setSample] = useState('');
   const [si, setSi] = useState('');
   const [kna, setKna] = useState('');
   const [valueInput, setValueInput] = useState([]);
-  const [active, setActive] = useState(false)
-  
+
+  function removeElement(id){
+    let alteredList = valueInput.filter((item) => item.id !== id);
+    setValueInput(alteredList);
+  }
 
 
   return (
     <>
       <h1>Value Input:</h1>
+      <label for='sample'>Sample</label>
+      <input
+        placeholder='Sample Name'
+        value={sample}
+        onChange={e => setSample(e.target.value)}
+        />&nbsp;
       <label for='si'>SiO2</label>
       <input
         placeholder='SiO2'
@@ -30,14 +40,16 @@ export default function FormDataComponent() {
       <button onClick={() => {
         setValueInput([
           ...valueInput,
-          { id: nextId++, si: si, kna: kna}
+          { id: nextId++, sample: sample, si: si, kna: kna}
         ]);
       }}>Add</button>
       <ul>
-        {/* <th>SiO<sub>2</sub></th> | <th>K<sub>2</sub>O + Na<sub>2</sub>O</th> */}
         {valueInput.map(value => (
           <li key={value.id}>
-            {value.si}, {value.kna}
+            {value.sample}: {value.si}, {value.kna} 
+            <button onClick={() => {
+              removeElement(value.id)
+            }}>remove</button>
             </li>
         ))}
       </ul>
